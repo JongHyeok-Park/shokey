@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useCookies } from "react-cookie";
-import { postLogin } from "../apis/auth";
+import { postLogin } from "../apis/loginApi";
 import { useNavigate } from "react-router-dom";
 
 export const useLogin = () => {

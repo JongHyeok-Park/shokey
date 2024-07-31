@@ -1,5 +1,5 @@
 import { useCookies } from 'react-cookie';
-import { postReissue } from '../apis/auth';
+import { postReissue } from '../apis/loginApi';
 
 export const useAuth = () => {
   const [, setCookie, ] = useCookies(['accessToken', 'refreshToken']);
