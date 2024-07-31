@@ -12,7 +12,7 @@ export default function Footer() {
           </span>
         </div>
         <span id="shokey-description">
-          광고주와 인플루언서의 연결 다리
+          Join millions of people who organize work and life with SHOKEY.
         </span>
       </section>
       <hr />
