@@ -1,11 +1,10 @@
 footer {
+    background-color: #18222A;
     color: #7E95AA;
-    position: absolute;
-    bottom: 0;
-    margin-bottom: 48px;
     font-weight: 800;
     width: 100%;
     max-width: 1120px;
+    padding: 72px 0;
 }
 
 .footer-top {
