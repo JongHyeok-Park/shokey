@@ -21,4 +21,33 @@ const postRegister = async (id, password, name, gender, email) => {
   return res.json();
 }
 
-export { postRegister };
+const postRefresh = async (id, password, name, gender, email) => {
+  const res = await fetch(import.meta.env.VITE_APP_API_URL + '/api/auth/refresh', {
+    method: 'PATCH',
+    credentials: 'include',
+  });
+
+  if (!res.ok) {
+    const message = await res.json().statusMsg;
+    throw new Error(message);
+  }
+
+  return res.json();
+}
+
+const postLogin = async ({ id, password }) => {
+  const res = await fetch(import.meta.env.VITE_APP_API_URL + '/api/auth/refresh', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ id, password }),
+  });
+
+  if (!res.ok) {
+    const message = await res.json().statusMsg;
+    throw new Error(message);
+  }
+
+  return res.json();
+}
+
+export { postRegister, postLogin, postRefresh };
