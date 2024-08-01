@@ -10,30 +10,25 @@ function Login() {
 
   return (
     <main className="login">
-      <section className='login-wrapper'>
-        <h1>로그인</h1>
-        <form onSubmit={handleSubmit}>
-          <div className='field'>
-            <label htmlFor="id">이메일</label>
-            <input
-              id="id"
-              type="text"
-              onChange={handleIdChange}
-              placeholder="id"
-            />
-          </div>
-          <div className='field'>
-            <label htmlFor="pw">패스워드</label>
-            <input
-              id="pw"
-              type="pw"
-              onChange={handlePwChange}
-              placeholder="pw"
-            />
-          </div>
-          <button onClick={handleSubmit}>Login</button>
-        </form>
-      </section>
+      <h1 className='login-title'>로그인</h1>
+      <form className='form-container'>
+        <div className='input-container'>
+          <input
+            id="id"
+            type="text"
+            onChange={handleIdChange}
+            placeholder="id"
+          />
+          <input
+            id="pw"
+            type="pw"
+            onChange={handlePwChange}
+            placeholder="pw"
+          />
+        </div>
+        <button onClick={handleSubmit}>로그인</button>
+        <a href='../routes/Register'>회원가입</a>
+      </form>
     </main>
   );
 }
