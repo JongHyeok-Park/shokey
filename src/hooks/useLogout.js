@@ -1,6 +1,6 @@
 import { useCookies } from 'react-cookie';
 
-export const useLogout = () => {
+const useLogout = () => {
   const [, , removeCookie] = useCookies(['accessToken', 'refreshToken']);
 
   const logout = () => {
@@ -15,3 +15,5 @@ export const useLogout = () => {
 
   return logout;
 }
+
+export default useLogout;
