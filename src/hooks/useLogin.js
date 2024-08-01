@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
 import { useCookies } from "react-cookie";
-import { postLogin } from "../apis/loginApi";
+import { postLogin } from "../apis/authApi";
 import { useNavigate } from "react-router-dom";
 
 export const useLogin = () => {
-  const [userId, setUserId] = useState();
-  const [userPassword, setUserPassword] = useState();
+  const [id, setId] = useState();
+  const [password, setPassword] = useState();
   const [cookies, setCookie] = useCookies(["accessToken", "refreshToken"]);
   const navigate = useNavigate();
   const accessTokenExpiration = 2 * 60 * 60 * 1000; // 2시간
@@ -18,26 +18,26 @@ export const useLogin = () => {
   }, [cookies.accessToken, cookies.refreshToken, navigate]);
 
   const handleIdChange = (e) => {
-    setUserId(e.target.value);
+    setId(e.target.value);
   }
   const handlePwChange = (e) => {
-    setUserPassword(e.target.value);
+    setPassword(e.target.value);
   }
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
-      if (!userId.trim()) {
+      if (!id.trim()) {
           alert('아이디를 입력해주세요.');
           return ;
         }
-        if (!userPassword.trim()) {
+        if (!password.trim()) {
           alert('비밀번호를 입력해주세요.');
           return ;
         }
 
-      const res = await postLogin({ userId, userPassword });
+      const res = await postLogin({ id, password });
 
       if (res.code === 4001) {
         alert(res.statusMsg);
