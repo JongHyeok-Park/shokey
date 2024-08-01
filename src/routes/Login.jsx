@@ -21,7 +21,7 @@ function Login() {
           />
           <input
             id="userPassword"
-            type="userPassword"
+            type="password"
             onChange={handlePwChange}
             placeholder="userPassword"
           />
