@@ -45,19 +45,13 @@ export const useLogin = () => {
         return;
       }
 
-      if (res.code !== 2000) {
-        alert("로그인에 실패하였습니다.");
-        console.log("로그인에 실패하였습니다.");
-        return;
-      }
-
       setCookie("accessToken", res.data.accessToken, {
         path: "/",
-        expires: new Date(Date.now + accessTokenExpiration),
+        expires: new Date(Date.now() + accessTokenExpiration),
       });
       setCookie("refreshToken", res.data.refreshToken, {
         path: "/",
-        expires: new Date(Date.now + refreshTokenExpiration),
+        expires: new Date(Date.now() + refreshTokenExpiration),
       });
       console.log(res.statusMsg);
     } catch (error) {
