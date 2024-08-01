@@ -4,8 +4,8 @@ import { postLogin } from "../apis/loginApi";
 import { useNavigate } from "react-router-dom";
 
 export const useLogin = () => {
-  const [id, setId] = useState();
-  const [pw, setPw] = useState();
+  const [userId, setUserId] = useState();
+  const [userPassword, setUserPassword] = useState();
   const [cookies, setCookie] = useCookies(["accessToken", "refreshToken"]);
   const navigate = useNavigate();
   const accessTokenExpiration = 2 * 60 * 60 * 1000; // 2시간
@@ -13,31 +13,31 @@ export const useLogin = () => {
 
   useEffect(()=>{
     if (cookies.accessToken && cookies.refreshToken) {
-      navigate(-1);
+      navigate('/');
     }
   }, [cookies.accessToken, cookies.refreshToken, navigate]);
 
   const handleIdChange = (e) => {
-    setId(e.target.value);
+    setUserId(e.target.value);
   }
   const handlePwChange = (e) => {
-    setPw(e.target.value);
+    setUserPassword(e.target.value);
   }
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
-      if (!id.trim()) {
+      if (!userId.trim()) {
           alert('아이디를 입력해주세요.');
           return ;
         }
-        if (!pw.trim()) {
+        if (!userPassword.trim()) {
           alert('비밀번호를 입력해주세요.');
           return ;
         }
 
-      const res = await postLogin({ id, pw });
+      const res = await postLogin({ userId, userPassword });
 
       if (res.code === 4001) {
         alert(res.statusMsg);

@@ -1,5 +1,5 @@
 async function fetchAPI(endpoint, options = {}) {
-  const url = import.meta.env.VITE_APP_API_URL+'/api/'+endpoint;
+  const url = import.meta.env.VITE_APP_API_URL+'/api/auth/'+endpoint;
   const res = await fetch(url, options);
 
   if (!res.ok) {
@@ -10,16 +10,16 @@ async function fetchAPI(endpoint, options = {}) {
   return res.json();
 }
 
-export const postLogin = async ({id, password}) => {
+export const postLogin = async ({userId, userPassword}) => {
   return fetchAPI('login', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ id, password }),
+    body: JSON.stringify({ userId, userPassword }),
   });
 }
 
 export const postReissue = async () => {
-  return fetchAPI('reissue', {
+  return fetchAPI('refresh', {
     method: 'POST',
     credentials: 'include',
   });

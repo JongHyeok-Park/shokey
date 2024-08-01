@@ -14,16 +14,16 @@ function Login() {
       <form className='form-container'>
         <div className='input-container'>
           <input
-            id="id"
+            id="userId"
             type="text"
             onChange={handleIdChange}
-            placeholder="id"
+            placeholder="userId"
           />
           <input
-            id="pw"
-            type="pw"
+            id="userPassword"
+            type="userPassword"
             onChange={handlePwChange}
-            placeholder="pw"
+            placeholder="userPassword"
           />
         </div>
         <button onClick={handleSubmit}>로그인</button>
