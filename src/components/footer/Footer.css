@@ -2,9 +2,12 @@ footer {
     background-color: #18222A;
     color: #7E95AA;
     font-weight: 800;
-    width: 100%;
-    max-width: 1120px;
     padding: 72px 0;
+}
+
+.footer-wrapper {
+    max-width: 1120px;
+    margin: auto;
 }
 
 .footer-top {
