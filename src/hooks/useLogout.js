@@ -3,7 +3,7 @@ import { useCookies } from 'react-cookie';
 export const useLogout = () => {
   const [, , removeCookie] = useCookies(['accessToken', 'refreshToken']);
 
-  const logout = async () => {
+  const logout = () => {
     try {
       removeCookie('accessToken', { path: '/' });
       removeCookie('refreshToken', { path: '/' });
