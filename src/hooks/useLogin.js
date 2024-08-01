@@ -53,11 +53,11 @@ export const useLogin = () => {
 
       setCookie("accessToken", res.data.accessToken, {
         path: "/",
-        expires: Date.now() + accessTokenExpiration,
+        expires: new Date(Date.now + accessTokenExpiration),
       });
       setCookie("refreshToken", res.data.refreshToken, {
         path: "/",
-        expires: Date.now() + refreshTokenExpiration,
+        expires: new Date(Date.now + refreshTokenExpiration),
       });
       console.log(res.statusMsg);
     } catch (error) {
