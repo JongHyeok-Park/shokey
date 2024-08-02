@@ -6,11 +6,11 @@ const registerInfluencer = async ({ userId, channelId, subscribers, niche, profi
 	  },
 	  credentials: 'include',
 	  body: JSON.stringify({
-		userId,
-		channelId,
-		subscribers,
-		niche,
-		profileImage,
+      userId,
+      channelId,
+      subscribers,
+      niche,
+      profileImage,
 	  }),
 	});
 

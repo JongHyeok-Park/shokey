@@ -66,7 +66,7 @@ const useRegisterInfluencer = () => {
     handleNicheChange,
     handleProfileImageChange,
     handleSubmit,
-	profileImage,
+	  profileImage,
   };
 };
 
