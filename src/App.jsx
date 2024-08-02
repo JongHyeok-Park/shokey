@@ -4,6 +4,7 @@ import Register from './routes/Register'
 import Header from './components/header/Header'
 import Main from './routes/Main'
 import Footer from './components/footer/Footer'
+import RegisterInfluencer from './routes/RegisterInfluencer'
 
 function App() {
 
@@ -13,6 +14,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Main />} />
         <Route path='/register' element={<Register />} />
+        <Route path='/register-influencer' element={<RegisterInfluencer />} />
       </Routes>
       <Footer />
     </div>
