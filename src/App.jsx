@@ -5,8 +5,10 @@ import Login from './routes/Login'
 import Header from './components/header/Header'
 import Main from './routes/Main'
 import Footer from './components/footer/Footer'
+import useRefresh from './hooks/useRefresh'
 
 function App() {
+	useRefresh();
 
   return (
     <div>

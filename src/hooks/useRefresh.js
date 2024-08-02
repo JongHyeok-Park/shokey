@@ -1,10 +1,17 @@
 import { useCookies } from 'react-cookie';
 import { postRefresh } from '../apis/authApi';
+import { useEffect } from 'react';
 
 const useRefresh = () => {
-  const [, setCookie, ] = useCookies(['accessToken', 'refreshToken']);
+  const [cookies, setCookie, ] = useCookies(['accessToken', 'refreshToken']);
   const accessTokenExpiration = 2 * 60 * 60 * 1000;
   const refreshTokenExpiration = 7 * 24 * 60 * 60 * 1000;
+
+  useEffect(()=>{
+	if (!cookies.accessToken) {
+		refresh;
+	}
+  }, [cookies.accessToken])
 
   const refresh = async () => {
     try {
@@ -25,8 +32,6 @@ const useRefresh = () => {
       expires: new Date(Date.now() + refreshTokenExpiration )
     });
   };
-
-  return refresh;
 }
 
 export default useRefresh;
