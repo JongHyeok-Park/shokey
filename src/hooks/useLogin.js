@@ -4,8 +4,8 @@ import { postLogin } from "../apis/authApi";
 import { useNavigate } from "react-router-dom";
 
 const useLogin = () => {
-  const [id, setId] = useState();
-  const [password, setPassword] = useState();
+  const [id, setId] = useState('');
+  const [password, setPassword] = useState('');
   const [cookies, setCookie] = useCookies(["accessToken", "refreshToken"]);
   const navigate = useNavigate();
   const accessTokenExpiration = 2 * 60 * 60 * 1000; // 2시간
