@@ -5,6 +5,7 @@ const useUserStore = create((set) => ({
   id: '',
   setUserName: (userName) => set(() => ({userName: userName})),
   setId: (id) => set({id}),
+  clearUser: () => set({userName: '', id: ''})
 }))
 
 export default useUserStore;
