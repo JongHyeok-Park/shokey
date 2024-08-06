@@ -5,6 +5,7 @@
 	max-width: 461px;
 	margin: 0 auto;
   margin-bottom: 80px;
+  align-items: center;
 }
 
 .title {
@@ -31,7 +32,7 @@
   color: #FFFFFF;
 }
 
-.field-value {
+.field-value, #no-user-info {
   background-color: #3E4C59;
   color: #FFFFFF;
 	border: none;
@@ -39,6 +40,11 @@
 	padding: 10px 14px;
 	width: 300px;
   font-size: 16px;
+}
+
+#no-user-info {
+  text-align: center;
+  padding: 20px 14px;
 }
 
 .field-input {
