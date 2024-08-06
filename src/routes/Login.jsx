@@ -1,5 +1,6 @@
 import './Login.css';
 import useLogin from '../hooks/useLogin';
+import { Link } from 'react-router-dom';
 
 function Login() {
   const {
@@ -27,7 +28,7 @@ function Login() {
           />
         </div>
         <button onClick={handleSubmit}>로그인</button>
-        <a href='../routes/Register'>회원가입</a>
+        <Link to='/register'>회원가입</Link>
       </form>
     </main>
   );

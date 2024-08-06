@@ -1,5 +1,5 @@
 import { useCookies } from 'react-cookie';
-import { postRefresh } from '../apis/authApi';
+import { patchRefresh } from '../apis/authApi';
 import { useEffect } from 'react';
 
 const useRefresh = () => {
@@ -14,7 +14,7 @@ const useRefresh = () => {
   }, [cookies])
 
   const refresh = async () => {
-    postRefresh(cookies.refreshToken)
+    patchRefresh(cookies.refreshToken)
     .then(res => {
       setCookie('accessToken', res.data.accessToken, {
         path: '/',

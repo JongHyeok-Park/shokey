@@ -22,8 +22,8 @@ const getMyInfo = (accessToken) =>
     headers: { 'Authorization': `Bearer ${accessToken}` },
   });
 
-const patchUserInfo = ({ changedData, id, accessToken }) =>
-  fetchAPI(`/api/users/${id}`, {
+const patchUserInfo = ( changedData, accessToken ) =>
+  fetchAPI(`/api/users`, {
     method: 'PATCH',
     headers: {
       'Content-Type': 'application/json',

@@ -14,8 +14,8 @@ const postRegister = async (id, password, name, gender, email) => {
   });
 
   if (!res.ok) {
-    const message = await res.json().statusMsg;
-    throw new Error(message);
+    const message = await res.json();
+    throw new Error(message.statusMsg);
   }
 
   return res.json();
@@ -32,14 +32,14 @@ const postLogin = async ({ id, password }) => {
 	});
 
 	if (!res.ok) {
-	  const message = await res.json().statusMsg;
-	  throw new Error(message);
+	  const message = await res.json();
+	  throw new Error(message.statusMsg);
 	}
 
 	return res.json();
 }
 
-const postRefresh = async (refreshToken) => {
+const patchRefresh = async (refreshToken) => {
 	const res = await fetch(import.meta.env.VITE_APP_API_URL + '/api/auth/refresh', {
 	  method: 'PATCH',
 	  credentials: 'include',
@@ -49,11 +49,11 @@ const postRefresh = async (refreshToken) => {
 	});
 
 	if (!res.ok) {
-	  const message = await res.json().statusMsg;
-	  throw new Error(message);
+	  const message = await res.json();
+	  throw new Error(message.statusMsg);
 	}
 
 	return res.json();
 }
 
-export { postRegister, postLogin, postRefresh };
+export { postRegister, postLogin, patchRefresh };

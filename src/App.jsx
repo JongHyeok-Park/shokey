@@ -8,11 +8,12 @@ import Login from './routes/Login'
 import useRefresh from './hooks/useRefresh'
 import UpdateUserInfo from './routes/UpdateUserInfo'
 import ViewUserInfo from './routes/ViewUserInfo'
+import ViewMyUserInfo from './routes/ViewMyUserInfo'
 import useInitializeUserInfo from './hooks/useInitializeUserInfo'
 
 function App() {
 	useRefresh();
-  useInitializeUserInfo();
+  // useInitializeUserInfo();
 
   return (
     <div>
@@ -22,7 +23,8 @@ function App() {
         <Route path='/register' element={<Register />} />
 				<Route path='/login' element={<Login />} />
 				<Route path='/users/:id' element={<ViewUserInfo />} />
-				<Route path='/update-users/:id' element={<UpdateUserInfo />} />
+				<Route path='/update-user-info' element={<UpdateUserInfo />} />
+				<Route path='/mypage' element={<ViewMyUserInfo />} />
       </Routes>
       <Footer />
     </div>
