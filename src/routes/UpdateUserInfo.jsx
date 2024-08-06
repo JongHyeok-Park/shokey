@@ -56,6 +56,16 @@ const UpdateUserInfo = () => {
             </button>
           </div>
         </div>
+        <div className="field">
+          <span className="field-name">이메일</span>
+          <input
+            type="text"
+            name="userName"
+            value={myUserInfo.userEmail}
+            onChange={handleUserEmailChange}
+            className="field-value"
+          />
+        </div>
       </div>
       <div className="buttons">
         <button onClick={handleUpdateUserInfo} className="update-button">수정완료</button>
