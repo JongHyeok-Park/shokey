@@ -21,11 +21,11 @@ function Header() {
         <div className="button-container">
         {(myUserInfo.userName && myUserInfo.id) ? (
             <>
-              <button id="mypage-btn" onClick={() => {navigate(`/mypage`)}}>
-                {myUserInfo.userName}님
-              </button>
               <button id="logout-btn" onClick={handleLogout}>
                 Logout
+              </button>
+              <button id="mypage-btn" onClick={() => {navigate(`/mypage`)}}>
+                {myUserInfo.userName}님
               </button>
             </>
           ) : (
