@@ -62,6 +62,7 @@ const useMyUserInfo = () => {
       await patchUserInfo(changedData, cookies.accessToken);
       alert('사용자 정보가 수정되었습니다.');
       fetchMyUserInfo();
+      navigate('/mypage');
     } catch (error) {
       alert(error.message);
     }
