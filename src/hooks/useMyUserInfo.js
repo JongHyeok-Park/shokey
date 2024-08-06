@@ -7,7 +7,13 @@ const useMyUserInfo = () => {
   const [cookies, setCookie, removeCookies] = useCookies(['accessToken', 'refreshToken']);
   const navigate = useNavigate();
   const [initialUserInfo, setInitialUserInfo] = useState({});
-  const [myUserInfo, setMyUserInfo] = useState({});
+  const [myUserInfo, setMyUserInfo] = useState({
+    userId: '',
+    userName: '',
+    userGender: true,
+    userEmail: '',
+    userRole: 0,
+  });
 
   useEffect(() => {
     if (cookies.accessToken) {
