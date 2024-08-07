@@ -6,6 +6,7 @@ const UpdateUserInfo = () => {
   const {
     myUserInfo,
     handleUserIdChange,
+    handleUserPasswordChange,
     handleUserNameChange,
     handleUserEmailChange,
     handleToggle,
@@ -25,6 +26,16 @@ const UpdateUserInfo = () => {
             className="field-value"
             value={myUserInfo.userId}
             onChange={handleUserIdChange}>
+          </input>
+        </div>
+        <div className="field">
+          <span className="field-name">패스워드</span>
+          <input
+            type="password"
+            name="userPassword"
+            className="field-value"
+            value={myUserInfo.userPassword}
+            onChange={handleUserPasswordChange}>
           </input>
         </div>
         <div className="field">

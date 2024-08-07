@@ -10,6 +10,7 @@ const useMyUserInfo = () => {
   const [myUserInfo, setMyUserInfo] = useState({
     userId: '',
     userName: '',
+    userPassword: '',
     userGender: true,
     userEmail: '',
     userRole: 0,
@@ -33,6 +34,10 @@ const useMyUserInfo = () => {
 
   const handleUserIdChange = (e) => {
     setMyUserInfo(prev => ({ ...prev, userId: e.target.value }));
+  }
+
+  const handleUserPasswordChange = (e) => {
+    setMyUserInfo(prev => ({ ...prev, userPassword: e.target.value }));
   }
 
   const handleUserNameChange = (e) => {
@@ -90,6 +95,7 @@ const useMyUserInfo = () => {
   return {
     myUserInfo,
     handleUserIdChange,
+    handleUserPasswordChange,
     handleUserNameChange,
     handleUserEmailChange,
     handleEdit,
