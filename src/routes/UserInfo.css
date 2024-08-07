@@ -31,6 +31,7 @@
 
 .field-name {
   color: #FFFFFF;
+  font-weight: 700;
 }
 
 .field-value, #no-user-info {
