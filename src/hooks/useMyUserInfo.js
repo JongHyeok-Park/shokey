@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { getMyInfo, patchUserInfo, deleteUserInfo } from '../apis/userInfoApi';
+import { getMyUserInfo, patchUserInfo, deleteUserInfo } from '../apis/userInfoApi';
 import { useNavigate } from 'react-router-dom';
 import { useCookies } from 'react-cookie';
 
@@ -24,7 +24,7 @@ const useMyUserInfo = () => {
 
   const fetchMyUserInfo = async() => {
     try {
-      const res = await getMyInfo(cookies.accessToken);
+      const res = await getMyUserInfo(cookies.accessToken);
       setMyUserInfo(res.data);
       setInitialUserInfo(res.data);
     } catch (error) {

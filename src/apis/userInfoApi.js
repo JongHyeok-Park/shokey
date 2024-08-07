@@ -16,7 +16,7 @@ const getUserInfo = (id) =>
     method: 'GET',
   });
 
-const getMyInfo = (accessToken) =>
+const getMyUserInfo = (accessToken) =>
   fetchAPI(`/api/me`, {
     method: 'GET',
     headers: { 'Authorization': `Bearer ${accessToken}` },
@@ -39,7 +39,7 @@ const deleteUserInfo = (accessToken) =>
   });
 
 export {
-  getMyInfo,
+  getMyUserInfo,
   getUserInfo,
   patchUserInfo,
   deleteUserInfo,
