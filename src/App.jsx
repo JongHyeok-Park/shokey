@@ -9,9 +9,11 @@ import useRefresh from './hooks/useRefresh'
 import UpdateUserInfo from './routes/UpdateUserInfo'
 import ViewUserInfo from './routes/ViewUserInfo'
 import ViewMyUserInfo from './routes/ViewMyUserInfo'
+import useInitializeUserInfo from './hooks/useInitializeUserInfo'
 
 function App() {
 	useRefresh();
+  useInitializeUserInfo();
 
   return (
     <div>
