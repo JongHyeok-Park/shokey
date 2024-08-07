@@ -6,7 +6,7 @@ import useUserStore from '../store/userStore';
 // accessToken이 바뀔 때 id, userName을 받아와 전역상태로 저장
 const useInitializeUserInfo = () => {
   const [cookies] = useCookies(['accessToken']);
-  const { setId, setUserName } = useUserStore();
+  const { setId, setUserName, setInfluencerId, clearUser } = useUserStore();
 
   useEffect(() => {
     initializeUserInfo();
@@ -18,8 +18,10 @@ const useInitializeUserInfo = () => {
         const res = await getMyInfo(cookies.accessToken);
         setId(res.data.id);
         setUserName(res.data.userName);
+        setInfluencerId(res.data.influencerId);
       } catch (error) {
         alert(error.message);
+        clearUser();
       }
     }
   };

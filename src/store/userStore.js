@@ -3,9 +3,11 @@ import {create} from 'zustand'
 const useUserStore = create((set) => ({
   userName: '',
   id: '',
-  setUserName: (userName) => set(() => ({userName: userName})),
+  influencerId: '',
+  setUserName: (userName) => set({userName}),
   setId: (id) => set({id}),
-  clearUser: () => set({userName: '', id: ''})
+  setInfluencerId: (influencerId) => set({influencerId}),
+  clearUser: () => set({userName: '', id: '', influencerId: ''})
 }))
 
 export default useUserStore;
