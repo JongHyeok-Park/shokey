@@ -71,4 +71,4 @@ const getMyInfo = async (token) => {
 	return res.json();
 }
 
-export { postRegister, postLogin, postRefresh };
+export { postRegister, postLogin, postRefresh, getMyInfo };
